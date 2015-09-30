@@ -20,10 +20,10 @@ case node[:platform]
       node.set['apache']['version'] = '2.2'
       node.set['apache']['package'] = 'httpd'
 
-      node.set['php']['packages'] = ['php56w', 'php56w-devel', 'php56w-cli', 'php56w-snmp', 'php56w-soap', 'php56w-xml', 'php56w-xmlrpc', 'php56w-process', 'php56w-mysqlnd', 'php56w-pecl-memcache', 'php56w-opcache', 'php56w-pdo', 'php56w-imap', 'php56w-mbstring', 'php56w-intl', 'php56w-mcrypt']
+      # node.set['php']['packages'] = ['php56w', 'php56w-devel', 'php56w-cli', 'php56w-snmp', 'php56w-soap', 'php56w-xml', 'php56w-xmlrpc', 'php56w-process', 'php56w-mysqlnd', 'php56w-pecl-memcache', 'php56w-opcache', 'php56w-pdo', 'php56w-imap', 'php56w-mbstring', 'php56w-intl', 'php56w-mcrypt']
 
       # manual install
-      # execute "yum install -y php56w php56w-devel php56w-cli php56w-snmp php56w-soap php56w-xml php56w-xmlrpc php56w-process php56w-mysqlnd php56w-pecl-memcache php56w-opcache php56w-pdo php56w-imap php56w-mbstring php56w-intl php56w-mcrypt"
+      execute "yum install -y php56w php56w-devel php56w-cli php56w-snmp php56w-soap php56w-xml php56w-xmlrpc php56w-process php56w-mysqlnd php56w-pecl-memcache php56w-opcache php56w-pdo php56w-imap php56w-mbstring php56w-intl php56w-mcrypt"
 
       include_recipe "build-essential"
       include_recipe "apache2::default"
